@@ -1,13 +1,11 @@
 import pandas as pd
 import numpy as np
-x = pd.read_csv("president_heights.csv")
-heights = np.array(x["height(cm)"])
+import matplotlib.pyplot as plt
 
+data = pd.read_csv("president_heights.csv")
+heights = np.array(data["height(cm)"])
 
-# print(x.head())
-# print(height)
-
-print("Mean height:       ", heights.mean())
-print("Standard deviation:", heights.std())
-print("Minimum height:    ", heights.min())
-print("Maximum height:    ", heights.max())
+plt.hist(heights)
+plt.title('Height Distribution of US Presidents')
+plt.xlabel('height (cm)')
+plt.ylabel('number')
